@@ -3,9 +3,9 @@ POSIX-compliant shell script to easily copy passwords from `pass` to your clipbo
 
 # Install Dependencies
 ```
-pacman -S fzf pass # Arch Linux
-apt-get install fzf pass # Debian-based
-brew install fzf pass # macOS
+pacman -S fzf pass        # Arch Linux
+apt-get install fzf pass  # Debian-based
+brew install fzf pass     # macOS
 ```
 
 # Usage
