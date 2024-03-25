@@ -13,7 +13,7 @@ fi
 files=$(find "$PASSWORD_STORE_DIR" -type f -name "*.gpg" | sed -e "s|$PASSWORD_STORE_DIR/||" -e "s|\.gpg$||")
 
 # Use fzf to let the user select a file
-selected_file=$(echo "$files" | fzf --prompt="Select a password file: ")
+selected_file=$(echo "$files" | fzy)
 
 # Check if the user selected a file
 if [ -n "$selected_file" ]; then
