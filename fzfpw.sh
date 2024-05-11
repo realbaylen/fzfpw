@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Set the path to your password store
-PASSWORD_STORE_DIR="$HOME/.password-store"
+password_dir="$HOME/.password-store"
 
 # Check if the password store directory exists
-if [ ! -d "$PASSWORD_STORE_DIR" ]; then
-	echo "Password store directory not found: $PASSWORD_STORE_DIR"
-	exit 1
+if [ ! -d "$password_dir" ]; then
+  echo "Password store directory not found: $PASSWORD_STORE_DIR"
+  exit 1
 fi
 
 # Find all password files in the password store directory
@@ -17,11 +17,11 @@ selected_file=$(echo "$files" | fzy)
 
 # Check if the user selected a file
 if [ -n "$selected_file" ]; then
-	# Use pass to copy the selected password to the clipboard
-	pass -c "$selected_file"
+  # Use pass to copy the selected password to the clipboard
+  pass -c "$selected_file"
 
-	echo "Password copied to clipboard: $selected_file"
+  echo "Password copied to clipboard: $selected_file"
 else
-	echo "No file selected. Exiting."
-	exit 1
+  echo "No file selected. Exiting."
+  exit 1
 fi
